@@ -1,0 +1,6 @@
+export const projects = [
+  { id: "objects-of-calm", name: "Objects of Calm", category: "E-commerce · Brand world", description: "A more mindful kind of everyday, brought to life through a warm new identity and considered digital flagship.", tags: ["Brand strategy", "E-commerce", "Content"], visual: "objects", year: "2026", result: "A calmer, more confident way to shop." },
+  { id: "forma-house", name: "Forma House", category: "Digital flagship · Strategy", description: "A living platform for a new generation of makers, collectors and people who see a room as possibility.", tags: ["Digital strategy", "Web design", "Development"], visual: "forma", year: "2025", result: "A digital home with room to grow." },
+  { id: "goodside", name: "Goodside", category: "Campaign · Content", description: "A bright, human campaign that found the everyday joy hiding in a very ordinary summer.", tags: ["Campaign", "Social", "Content studio"], visual: "goodside", year: "2025", result: "A campaign built to travel further." },
+  { id: "morrow", name: "Morrow Health", category: "Brand identity · Digital", description: "Making tomorrow feel a little more within reach with a new voice for modern wellbeing.", tags: ["Brand identity", "UX & UI", "Art direction"], visual: "morrow", year: "2024", result: "A new point of view on everyday wellness." }
+];

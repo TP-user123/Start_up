@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { services } from "../../data/services";
+import Reveal from "../../components/Reveal";
+import "./services.css";
+
+export const metadata = { title: "What We Do", description: "Digital experiences, social, content, branding and marketing from one independent creative studio." };
+export default function ServicesPage() {
+  return <div className="services-page page-shell"><section className="services-hero page-gutter"><div className="services-hero-inner mx-auto"><Reveal><div className="eyebrow">A CONNECTED SET OF CAPABILITIES <span className="eyebrow-line" /> WHAT WE DO</div><h1>Everything that makes<br />your brand <span className="gradient-text">go further.</span></h1><p>Four disciplines, one joined-up team. We find the story, shape the experience and help it find its people.</p></Reveal><div className="services-orb"><span>✳</span><i /><b /></div></div></section>
+    <section className="services-list-section page-gutter"><div className="services-list mx-auto">{services.map((service, i) => { const Icon = service.icon; return <Reveal key={service.slug} delay={i * .06}><article id={service.slug} className={`service-detail service-${service.accent}`}><div className="service-detail-top"><span className="detail-number">{service.number} / 04</span><span className="detail-icon"><Icon size={21} strokeWidth={1.5} /></span><span className="detail-tag">{service.title}</span></div><div className="service-detail-body"><div><h2>{service.name}</h2><p>{service.description}</p><Link href={`/contact?service=${encodeURIComponent(service.name)}`} className="detail-cta">Let&apos;s talk about it <ArrowUpRight size={15} /></Link></div><div className="deliverables"><span>THE GOOD STUFF</span>{service.deliverables.map(d => <div key={d}><Check size={14} />{d}</div>)}</div></div><div className="detail-decoration"><Icon size={120} strokeWidth={.55} /></div></article></Reveal>; })}</div></section>
+    <section className="services-note page-gutter"><Reveal className="services-note-inner mx-auto"><div><span className="eyebrow">NEED A FEW THINGS AT ONCE? <span className="eyebrow-line" /> THAT&apos;S THE POINT</span><h2>We make the pieces<br /><span className="text-muted">work together.</span></h2></div><p>From first thought to the thing people can touch, we connect the strategy, creative and delivery around your actual goals. One conversation, one team, no lost-in-translation moments.</p></Reveal></section>
+    <section className="services-bottom page-gutter"><Reveal className="services-bottom-inner mx-auto"><span className="eyebrow">GOOD WORK STARTS WITH A GOOD QUESTION</span><h2>What are you<br /><span className="gradient-text">trying to change?</span></h2><Link className="button-primary" href="/contact">Tell us about it <ArrowRight size={15} /></Link></Reveal></section>
+  </div>;
+}
