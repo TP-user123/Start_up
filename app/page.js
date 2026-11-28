@@ -14,12 +14,21 @@ export default function Home() {
     <section className="home-hero section-pad">
       <div className="hero-glow" /><div className="hero-grid" />
       <div className="hero-content mx-auto">
-        <Reveal><div className="eyebrow"><span className="eyebrow-dot" /> Independent creative studio <span className="eyebrow-line" /> EST. 2018</div></Reveal>
-        <Reveal delay={.08}><h1>We build digital experiences that <em className="hero-emphasis">move brands forward.</em></h1></Reveal>
-        <Reveal delay={.16}><p className="hero-copy">Strategy, design and culture-shaping creativity for ambitious brands ready for their next chapter.</p></Reveal>
-        <Reveal delay={.22}><div className="hero-actions"><Link className="button-primary" href="/contact">Let&apos;s work together <ArrowUpRight size={16} /></Link><Link className="button-quiet" href="/portfolio">Explore our work <ArrowRight size={16} /></Link></div></Reveal>
-        <div className="hero-art" aria-label="Abstract luminous digital sculpture">
-          <div className="hero-orb orb-one" /><div className="hero-orb orb-two" /><div className="hero-ring ring-one" /><div className="hero-ring ring-two" /><div className="hero-star"><Sparkles size={42} strokeWidth={1.2} /></div>
+        <Reveal><div className="eyebrow"><span className="eyebrow-dot" /> Creative digital studio <span className="eyebrow-line" /> EST. 2018</div></Reveal>
+        <Reveal delay={.08}><h1><span className="hero-brand">Northstar</span> turns ideas into digital experiences that <em className="hero-emphasis">move brands forward.</em></h1></Reveal>
+        <Reveal delay={.16}><p className="hero-copy">Strategy, design and culture-shaping creativity for ambitious brands ready for their next chapter. One connected team for digital, content and growth.</p></Reveal>
+        <Reveal delay={.22}><div className="hero-actions"><Link className="button-primary" href="/contact">Let&apos;s build something together <ArrowUpRight size={16} /></Link><Link className="button-quiet" href="/portfolio">Explore our portfolio <ArrowRight size={16} /></Link></div></Reveal>
+        <div className="hero-art" aria-label="Interactive digital circuit and website preview">
+          <div className="hero-circuit-board" aria-hidden="true">
+            <svg className="hero-circuit-lines" viewBox="0 0 640 440" fill="none">
+              <path d="M20 104H154V154H244V88H338V140H416V72H598M4 286H116V238H218V310H330V258H470V330H616M96 26V94M288 12V82M526 22V105M178 346V408M398 348V414M560 273V401M154 154V198H98V238M416 140V192H526V244" />
+              <path className="circuit-active circuit-active-a" d="M20 104H154V154H244V88H338V140H416V72H598" />
+              <path className="circuit-active circuit-active-b" d="M4 286H116V238H218V310H330V258H470V330H616" />
+              <g className="circuit-nodes"><circle cx="154" cy="154" r="4"/><circle cx="244" cy="88" r="4"/><circle cx="416" cy="140" r="4"/><circle cx="116" cy="238" r="4"/><circle cx="330" cy="258" r="4"/><circle cx="470" cy="330" r="4"/></g>
+            </svg>
+          </div>
+          <div className="hero-preview glass"><div className="preview-toolbar"><i /><i /><i /><span>northstar.studio / launch</span><Asterisk size={14} /></div><div className="preview-layout"><div className="preview-sidebar"><b>N.</b><i /><i /><i /><i /></div><div className="preview-screen"><small>BRAND / DIGITAL / GROWTH</small><strong>Make your<br />next move.</strong><span>Strategy that finds a signal.<br />Design that carries it forward.</span><em>Explore the studio <ArrowUpRight size={11} /></em><div className="preview-screen-art"><span /><i /><b /></div></div></div></div>
+          <div className="hero-preview-chip glass"><span className="preview-chip-dot" /><span><b>Connected by design</b><small>One team. Every touchpoint.</small></span></div>
           <div className="float-note float-note-top glass"><span className="note-icon"><Asterisk size={17} /></span><span><b>Made with intention</b><small>Design with a point of view</small></span></div>
           <div className="float-note float-note-bottom glass"><span className="note-stat">+38%</span><span><b>Average lift in engagement</b><small>Across our latest launches</small></span></div>
           <div className="art-caption">A little more feeling.<br />A lot more meaning.</div>

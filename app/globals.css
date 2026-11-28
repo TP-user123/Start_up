@@ -6,20 +6,23 @@
 :root {
   color-scheme: dark;
   --bg: #08090d;
-  --surface: #101116;
+  --surface: #11151c;
+  --card: rgba(20,25,34,.72);
   --text: #f5f3f8;
   --muted: #a09eaa;
   --line: rgba(255,255,255,.12);
-  --purple: #a88bff;
-  --blue: #6f91ff;
-  --cyan: #7fe1e8;
-  --signal: #d3f46e;
-  --signal-ink: #202419;
-  --cta-gradient: linear-gradient(110deg,#bca3ff 0%,#e7a1ba 52%,#d3f46e 100%);
-  --cta-text: #191a13;
-  --gradient: linear-gradient(110deg, #c2a7ff 0%, #f0a0bc 52%, #d3f46e 100%);
-  --ambient-purple: rgba(101,75,183,.2);
-  --ambient-blue: rgba(48,102,142,.07);
+  --purple: #8db8ff;
+  --blue: #559dff;
+  --cyan: #55d4bd;
+  --green: #49c99b;
+  --red: #ff737d;
+  --signal: #59d4a4;
+  --signal-ink: #09251d;
+  --cta-gradient: linear-gradient(110deg,#559dff 0%,#48c8a0 68%,#ff737d 140%);
+  --cta-text: #07141d;
+  --gradient: linear-gradient(110deg, #78b4ff 0%, #48c8a0 62%, #ff8588 110%);
+  --ambient-purple: rgba(44,111,190,.17);
+  --ambient-blue: rgba(28,155,129,.07);
   --font-body: 'DM Sans', sans-serif;
   --font-display: 'Manrope', sans-serif;
   --font-accent: 'Instrument Serif', Georgia, serif;
@@ -28,28 +31,41 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #f3f1f8;
+  --bg: #f7f9fc;
   --surface: #fff;
-  --text: #1d1a27;
-  --muted: #625e6c;
-  --line: rgba(35,29,52,.14);
-  --purple: #7558cc;
-  --blue: #516ad4;
-  --cyan: #16838c;
-  --signal: #608139;
+  --card: rgba(255,255,255,.78);
+  --text: #182433;
+  --muted: #586777;
+  --line: rgba(27,48,72,.15);
+  --purple: #256bd0;
+  --blue: #176bd4;
+  --cyan: #087f70;
+  --green: #168363;
+  --red: #cf3f4b;
+  --signal: #168363;
   --signal-ink: #fff;
-  --cta-gradient: linear-gradient(110deg,#7254c1 0%,#9c5e85 52%,#526f33 100%);
+  --cta-gradient: linear-gradient(110deg,#2677dc 0%,#168d6b 68%,#cb4c55 140%);
   --cta-text: #fff;
-  --gradient: linear-gradient(110deg, #7657cb 0%, #b7658b 52%, #5b773b 100%);
-  --ambient-purple: rgba(170,145,224,.17);
-  --ambient-blue: rgba(109,174,193,.13);
+  --gradient: linear-gradient(110deg, #2677dc 0%, #168d6b 64%, #cb4c55 110%);
+  --ambient-purple: rgba(94,154,221,.13);
+  --ambient-blue: rgba(78,184,155,.09);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--bg); }
 body { margin: 0; min-width: 320px; color: var(--text); background: radial-gradient(ellipse at 50% -18%, var(--ambient-purple), transparent 47%), radial-gradient(ellipse at 100% 42%, var(--ambient-blue), transparent 36%), var(--bg); font-family: var(--font-body); -webkit-font-smoothing: antialiased; transition: background-color .25s ease, color .25s ease; }
+.circuit-background { position: fixed; z-index: 0; inset: 0; pointer-events: none; opacity: .82; }
+.nav-shell, main, .footer-wrap { position: relative; z-index: 1; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 ::selection { color: #090a0d; background: #b9a5ff; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+.services-orb, .portfolio-orb, .contact-orbit, .about-art-sun, .about-art-orbit, .story-light { display: none !important; }
+.services-hero-inner::after, .portfolio-hero-inner::after, .contact-hero-inner::after { position: absolute; z-index: 0; top: 0; right: 2%; width: min(34vw,360px); height: 230px; border: 1px solid rgba(86,162,235,.16); border-radius: 18px; background-image: linear-gradient(rgba(77,153,222,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(77,153,222,.09) 1px,transparent 1px),linear-gradient(135deg,transparent 48%,rgba(73,201,155,.26) 49%,rgba(73,201,155,.26) 49.4%,transparent 50%); background-size: 30px 30px,30px 30px,100% 100%; content: ""; opacity: .7; pointer-events: none; mask-image: linear-gradient(90deg,transparent,#000 30%,#000 78%,transparent); }
+.services-hero-inner > div:first-child, .portfolio-hero-inner > div:first-child, .contact-hero-inner > div:first-child { position: relative; z-index: 1; }
+.about-art { background-color: transparent !important; background-image: linear-gradient(rgba(77,153,222,.085) 1px,transparent 1px),linear-gradient(90deg,rgba(77,153,222,.085) 1px,transparent 1px),linear-gradient(115deg,transparent 49.7%,rgba(73,201,155,.22) 50%,transparent 50.3%) !important; background-size: 38px 38px,38px 38px,100% 100% !important; }
+.story-visual { background-image: linear-gradient(rgba(77,153,222,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(77,153,222,.08) 1px,transparent 1px),linear-gradient(145deg,#202a35,#131922 64%,#172a2c) !important; background-size: 34px 34px,34px 34px,100% 100% !important; }
+:root[data-theme="light"] .services-hero-inner::after, :root[data-theme="light"] .portfolio-hero-inner::after, :root[data-theme="light"] .contact-hero-inner::after { border-color: rgba(37,107,208,.16); }
+@media (max-width: 760px) { .services-hero-inner::after, .portfolio-hero-inner::after, .contact-hero-inner::after { right: -12%; width: 230px; height: 190px; opacity: .42; } }
